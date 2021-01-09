@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     const cards = document.querySelectorAll(".memory-card");
+    var clicks=0;
     console.log(cards);
     cards.forEach((card) => {
         let randomPos = Math.floor(Math.random() * 12);
@@ -37,6 +38,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function unflipCards() {
+        clicks +=1;
+        document.getElementById("clicknumber").innerHTML = clicks;
         lockBoard = true;
         setTimeout(() => {
             firstCard.classList.remove("flip");
